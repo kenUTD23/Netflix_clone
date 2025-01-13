@@ -1,0 +1,228 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url('../HTML_files/Images/background.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;    
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
+    z-index: -1;
+    }
+    /* Logo Styling */
+.logo {
+    position: absolute; /* Position relative to the page */
+    top: -1%; /* Distance from the top */
+    left: 340px; /* Distance from the left */
+    width: 180px; /* Resize the logo */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 10;
+}
+
+/* Center Content */
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-left: 50;
+    margin-top: 10;
+    
+}
+
+/* Form Styling */
+.login-form {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    gap: 15px; /* Space between inputs, labels, and buttons */
+    background: rgba(0, 0, 0, 0.733); /* Dark background with transparency */
+    padding: 30px 50px 200px 50px;
+    border-radius: 1px;
+    margin-top: 10px;
+    width: 350px;
+    height: 570px;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+
+    transform: translateY(25px);
+}
+
+.login-form h1 {
+    margin-top: 10px; /* Adjust the space above */
+    margin-bottom: 10px;
+    margin-left: 22px; /* Move it slightly to the right */
+}
+
+
+/* Input Fields */
+.login-form input {
+    width: 77.5%;
+    height: 25px;
+    padding: 12px;
+    border: 1px solid #dd1717;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    margin-left: 25px;
+    margin-top: -1px;
+    font-size: 14px;
+    color: white;
+    color: rgb(255, 255, 255);
+    background-color:rgba(37, 32, 32, 0.7) ;
+}    
+.login-form input::placeholder {
+        color: rgba(255, 255, 255, 0.7); /* Light gray placeholders */
+        font-family: 'Arial', sans-serif; /* Placeholder font */
+        font-size: 15px;
+}
+
+.login-form input:focus {
+    border-color:#e50914 ;
+    outline: none;
+ }
+
+.error-message {
+    color: #d93025; /* Red error message */
+    display: none;
+    font-size: 12px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    margin-left: 25px;
+}
+
+.error-pass {
+    color: #e50914; /* Red error message */
+    display: none;
+    font-size: 12px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    margin-left: 25px;
+}
+
+/* Buttons */
+.login-form button {
+    padding: 10px;
+    width:85%;
+    margin-left: 25px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-form button:first-of-type {
+    background: #e50914; /* Netflix red */
+    color: white;
+    border: none;
+    margin-bottom: -16px;
+}
+
+.login-form button:first-of-type:hover {
+    background: #f40612; /* Darker red for hover */
+}
+
+.login-form button:last-of-type {
+    background: #444;
+    color: white;
+    border: none;
+    margin-top:-15px;
+}
+
+.login-form button:last-of-type:hover {
+    background: #666;
+}
+
+.or-divider {
+    display: flex; /* Align items in a row */
+    align-items: center; /* Vertically center align the text */
+    justify-content: center; /* Horizontally center align the content */
+    text-align: center;
+    color: white; /* Text color for "OR" */
+    font-size: 14px; /* Font size for the "OR" text */
+    margin: 20px 0; /* Space above and below the divider */
+}
+
+.or-divider::before,
+.or-divider::after { /* Create lines before and after the text */
+    flex: 1; /* Ensure the lines stretch to fill available space */
+    height: 1px; /* Thickness of the line */
+    background-color: #666; /* Line color */
+}
+
+.remember-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 5px;
+    white-space: nowrap;
+}
+
+.remember-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: white;
+}
+
+.remember-container input[type="checkbox"] {
+    margin-left: 26px;
+    vertical-align: middle;
+}
+
+.forgot-password {
+    color: white;
+    text-decoration: underline;
+    font-size: 14px;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+}
+
+.new-to-netflix {
+    text-align: left;
+    margin-top: -8px;
+    margin-left: 26px;
+    font-size: 15px;
+    color: white;
+}
+
+.sign-up-link {
+    color: white;
+    text-decoration: underline;
+}
+
+.sign-up-link:hover {
+    color: #e50914;
+    text-decoration: none;
+}
+
+/* Captcha */
+
+.recaptcha-text {
+    font-size: 12px;
+    color: rgb(121, 118, 118);
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 25px;
+}
+
+.learn-more-link {
+    color: #0066cc; /* Highlighted blue color */
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.learn-more-link:hover {
+    color: #004080; /* Darker blue on hover */
+    text-decoration: none;
+}

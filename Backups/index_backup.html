@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <link rel="stylesheet" href="../CSS/signin.css">
+</head>
+<body>
+    <img src="Images/logo.png" alt="Netflixlogo" class="logo">
+   
+    <div class = "content">
+        <form class="login-form" action="/login" method="POST">
+            <h1>Sign In</h1>
+            <label for="username"></label>
+            <input type="username" id="username" name="username" placeholder="Email or mobile number" required>
+            <div class="error-message">Please enter a valid email or phone number.</div>
+
+            <label for="password"></label>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <div class="error-pass">Your password must contain between 4 and 60 characters.</div>
+            
+
+            <button type="submit">Sign in</button>
+            
+            
+            <div class="or-divider">
+                <span>OR</span>
+            </div>
+            <button type="button">Use a Sign-in Code</button>
+
+            <a href="#" class="forgot-password">Forgot password?</a>
+
+            <div class="remember-container">
+                <label class="remember-label">
+                    <input type="checkbox"> Remember me
+                </label>
+            </div>
+            
+            <p class="new-to-netflix">
+                New to Netflix? <a href="#" class="sign-up-link">Sign up now.</a>
+            </p>
+  
+        </form>
+    </div>
+
+</body>
+</html>

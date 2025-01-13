@@ -1,0 +1,243 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #141414;
+    color: white;
+}
+
+
+
+.header {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    gap: 30px; /* Add space between logo and navigation */
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.nav {
+    display: flex;
+    gap: 15px; /* Add space between navigation links */
+    flex: 1; /* Push the profile image to the far right */
+    margin-left: 20px; /* Add some space between the logo and nav */
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.nav a:hover {
+    color: #e50914; /* Netflix red */
+}
+
+.logo {
+    width: 100px;
+}
+
+.profile img {
+    width: 35px;
+    border-radius: 100;
+}
+
+/* Banner */
+.banner {
+    position:relative ;
+    height: 90vh; /* Adjust height as needed */
+    width: 100vw; /* Full viewport width */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    margin-bottom: -180px;
+}
+
+
+.banner::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20%; /* Adjust fade height as needed */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(20, 20, 20, 1) 100%);
+    z-index: 1;
+    pointer-events: none; /* Ensures it doesn’t interfere with interactions */
+}
+
+
+.banner-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Stretch to full width */
+    height: 100%; /* Stretch to full height */
+    z-index: 0;
+    object-fit: cover; /* Ensures the video fills the container */
+}
+
+
+.banner-content {
+    position: absolute; /* Detach content from document flow */
+    bottom: 20%; /* Position content above the gradient */
+    left: 20px; /* Adjust horizontal position */
+    z-index: 2; /* Keep above the gradient and video */
+    color: white;
+    max-width: 600px;
+}
+
+.special {
+    font-size: 1.2rem;
+    color: #e50914;
+    font-weight: bold;
+}
+
+.banner-title {
+    font-size: 4rem;
+    margin-top: 350px;
+}
+
+.banner-subtitle {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.banner-buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.play-btn {
+    background-color: #e50914;
+    color: white;
+    margin-right: 10px;
+}
+
+.info-btn {
+    background-color: rgba(255, 255, 255, 0.7);
+    color: black;
+}
+
+/* Movie Rows */
+
+.movie-row#now-playing {
+    position: relative; /* Keep it independent of the banner */
+    padding-top: 20px; /* Add padding inside */
+    top: 0; /* Fix the position */
+    z-index: 2;
+    background: transparent; /* Ensure it blends with the gradient */
+}
+
+
+.movie-row {
+    margin: 20px 0;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.row-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 0 10px;
+}
+
+.thumbnails {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    gap: 20px;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Snap scrolling */
+    scroll-behavior: smooth; /* Smooth scrolling */
+    padding: 20px;
+    flex-wrap: nowrap; /* Prevent wrapping */
+    overflow-x: auto; /* Horizontal scroll enabled */
+}
+
+.thumbnails::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar for a cleaner look */
+}
+
+.thumbnail {
+    flex: 0 0 250px; /* Fixed width of 250px for wide thumbnails */
+    height: 340px; /* Fixed height for shorter, wider thumbnails */
+    position: relative;
+    border-radius: 5px; /* Slightly rounded corners */
+    overflow: visible; /* Crop any overflowing image content */
+    transition: transform 0.5s ease, box-shadow 0.8s ease; /* Smooth animations */
+    z-index: 0 ;    
+}
+
+.thumbnail img {
+    width: 100%; /* Ensure the image fills the thumbnail */
+    height: 100%; /* Maintain aspect ratio */
+    object-fit: cover; /* Crop the image for a uniform layout */
+    transition: transform 0.3s ease;
+}
+
+.thumbnail:hover {
+    transform: scale(1.2); /* Enlarge the thumbnail slightly */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Add a shadow for depth */
+    z-index: 10; /* Ensure the hovered thumbnail is on top */
+}
+
+.thumbnail img:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+
+
+/* Scroll Buttons */
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.scroll-btn.left {
+    left: 10px;
+}
+
+.scroll-btn.right {
+    right: 10px;
+}
+
+.scroll-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #000;
+}
+
+.footer a {
+    color: gray;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
